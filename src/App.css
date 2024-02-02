@@ -1,0 +1,93 @@
+html,
+body,
+#root,
+.App {
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #b82e1f 74%);
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.animated {
+  animation: flipInX 1s ease-in;
+}
+
+#dartboard-svg {
+  filter: drop-shadow(1px 3px 5px rgba(255, 255, 255, 0.537));
+}
+
+.animated2 {
+  transform: translate(500px, 0);
+  animation: slideIn .5s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translate(300px, 0);
+  }
+
+  20% {
+    transform: translate(100px, 0);
+  }
+
+  60% {
+    transform: translate(-20px, 0);
+  }
+
+  80% {
+    transform: translate(20, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: .1;
+  }
+
+  40% {
+    transform: perspective(400px) rotateX(-10deg);
+    opacity: .4;
+  }
+
+  70% {
+    transform: perspective(400px) rotateX(10deg);
+    opacity: .8;
+  }
+
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+path:hover {
+  filter: drop-shadow(-16px 0px 5px red) invert(25%);
+}
+
+#BaseBoard>*:hover {
+  filter: unset;
+}
+
+#Board:hover {
+  filter: unset;
+}
+
+text:hover {
+  filter: unset;
+}
+
+#Inside-Spider:hover {
+  filter: unset;
+}
+
+#BoardNumbers:hover {
+  filter: unset;
+}
